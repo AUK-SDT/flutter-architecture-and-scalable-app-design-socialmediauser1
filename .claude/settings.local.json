@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:graphqlpokemon.favware.tech)",
+      "Bash(curl -s -X POST https://graphqlpokemon.favware.tech/v8 -H \"Content-Type: application/json\" -d '{\"query\":\"{ __schema { queryType { fields { name description args { name type { name kind ofType { name } } } } } } }\"}')",
+      "Bash(python -m json.tool)",
+      "Bash(curl -s -X POST https://graphqlpokemon.favware.tech/v8 -H \"Content-Type: application/json\" -d '{\"query\":\"{ getAllPokemon\\(offset: 89, take: 2\\) { key species num types { name } baseStats { hp attack defense specialattack specialdefense speed } baseStatsTotal sprite color height weight } }\"}')",
+      "Bash(curl -s -X POST https://graphqlpokemon.favware.tech/v8 -H \"Content-Type: application/json\" -d '{\"query\":\"{ getPokemonByDexNumber\\(number: 25\\) { key species num types { name } baseStats { hp attack defense specialattack specialdefense speed } baseStatsTotal sprite color height weight flavorTexts { game flavor } abilities { first { name } second { name } hidden { name } } } }\"}')",
+      "Bash(flutter pub:*)",
+      "Bash(cmd.exe /c \"flutter pub get\")",
+      "Bash(cmd.exe /c \"where flutter\")",
+      "Read(//c/Users/malta/development/flutter/bin/**)",
+      "Read(//c/src/flutter/bin/**)",
+      "Read(//c/Users/malta/**)",
+      "Bash(powershell.exe -Command \"Get-Command flutter -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source\")",
+      "Bash(powershell.exe -Command \"Get-ChildItem -Path 'C:\\\\' -Recurse -Filter 'flutter.bat' -ErrorAction SilentlyContinue -Depth 4 | Select-Object -First 5 -ExpandProperty FullName\")",
+      "Bash(export PATH=\"$PATH:/c/flutter/bin\")",
+      "Bash(flutter analyze:*)",
+      "Bash(flutter build:*)",
+      "mcp__ide__getDiagnostics",
+      "Bash(git init *)",
+      "Bash(git remote *)",
+      "Bash(git add *)"
+    ]
+  }
+}
