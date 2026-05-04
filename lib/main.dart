@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'bloc/pokemon_bloc.dart';
-import 'bloc/pokemon_event.dart';
-import 'screens/list_screen.dart';
-import 'services/pokemon_service.dart';
+import 'core/graphql_client.dart';
+import 'features/pokedex/pokemon_bloc.dart';
+import 'features/pokedex/list_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,9 +20,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: BlocProvider(
-        create: (_) =>
-            PokemonBloc(service: PokemonService())
-              ..add(const PokemonListRequested()),
+        create: (_) => PokemonBloc(client: GraphqlClient())..add(const PokemonListRequested()),
         child: const PokemonListScreen(),
       ),
     );
